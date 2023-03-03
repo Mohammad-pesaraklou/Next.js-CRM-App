@@ -10,16 +10,18 @@ const Navbar = () => {
           backgroundColor: "black",
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "center",
+          position: "sticky",
         }}
       >
         <div className={styles.logoContainer}>
           <Typography variant="h6">CRM APP</Typography>
         </div>
-        <div className={styles.logoContainer}>
-          <Link href="">
+        <div className={styles.linkContainer}>
+          <Link href="/customers">
             <p>Customers</p>
           </Link>
-          <Link href="">
+          <Link href={"/employees"}>
             <p>Employees</p>
           </Link>
         </div>

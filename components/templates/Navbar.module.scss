@@ -1,0 +1,13 @@
+.linkContainer {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  p {
+    padding-bottom: 4px;
+    &:hover {
+      border-bottom: 2px solid darkred;
+      transition: all 0.5s ease;
+    }
+  }
+}
