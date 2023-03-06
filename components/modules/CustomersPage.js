@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import axios from "axios";
+import Link from "next/link";
 import styles from "../../styles/Customers.module.scss";
 
 const CustomersPage = ({ customers, getData }) => {
@@ -21,7 +22,9 @@ const CustomersPage = ({ customers, getData }) => {
             <Button variant="outlined" onClick={() => deleteHandler(i._id)}>
               Delete
             </Button>
-            <Button variant="outlined">Edit</Button>
+            <Link href={`/edit/${i._id}`}>
+              <Button variant="outlined">Edit</Button>
+            </Link>
             <Button variant="outlined">Details</Button>
           </div>
         </div>

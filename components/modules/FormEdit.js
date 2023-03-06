@@ -1,31 +1,25 @@
-import Form from "@/components/modules/Form";
+import React, { useState } from "react";
 import { Button } from "@mui/material";
 import axios from "axios";
+// components
+import Form from "./Form";
+// styles
+import styles from "../../pages/addCustomer/index.module.scss";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import styles from "./index.module.scss";
 
-const AddCustomer = () => {
+const FormEdit = ({ data, id }) => {
   const router = useRouter();
   const [customerInputs, setCustomersInput] = useState({
-    name: "",
-    lastName: "",
-    email: "",
-    address: "",
-    postalCode: "",
-    date: "",
-    products: [],
+    name: data.name,
+    lastName: data.lastName,
+    email: data.email,
+    address: data.address || "",
+    postalCode: data.postalCode || "",
+    date: data.date || "",
+    products: data.products || [],
   });
-  const { products } = customerInputs;
-
-  const addItem = () => {
-    setCustomersInput({
-      ...customerInputs,
-      products: [...products, { name: "", qty: "", price: "" }],
-    });
-  };
-  const sendHandler = async () => {
-    const req = await axios.post("api/customers", { customerInputs });
+  const editHandler = async () => {
+    const req = await axios.patch(`/api/edit/${id}`, { customerInputs });
     setCustomersInput({
       name: "",
       lastName: "",
@@ -34,9 +28,9 @@ const AddCustomer = () => {
       postalCode: "",
       date: "",
     });
-    console.log(req.data);
     if (req.data.status === "successful") return router.push("/customers");
   };
+  console.log(id);
   const cancelHandler = () => {
     setCustomersInput({
       name: "",
@@ -59,15 +53,13 @@ const AddCustomer = () => {
         <Button variant="contained" color="secondary" onClick={cancelHandler}>
           Cancel
         </Button>
-        <Button sx={{ maxWidth: "200px" }} variant="outlined" onClick={addItem}>
-          Add Item
-        </Button>
-        <Button variant="contained" color="primary" onClick={sendHandler}>
-          Save
+
+        <Button variant="contained" color="primary" onClick={editHandler}>
+          Edit
         </Button>
       </div>
     </div>
   );
 };
 
-export default AddCustomer;
+export default FormEdit;

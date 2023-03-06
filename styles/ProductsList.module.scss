@@ -1,0 +1,45 @@
+.itemContainer {
+  width: 60vw;
+  border: 2px solid black;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  button {
+    width: 30%;
+    margin: 0px auto;
+  }
+}
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.nameSection {
+  margin-bottom: 30px;
+  input {
+    width: 100%;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+}
+
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+  input {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}
