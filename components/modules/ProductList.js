@@ -8,7 +8,6 @@ const ProductList = ({ customerInputs, setCustomersInput }) => {
     const { name, value } = e.target;
     const newProducts = [...products];
     newProducts[index][name] = value;
-    console.log(products);
     setCustomersInput({ ...customerInputs, products: newProducts });
   };
 

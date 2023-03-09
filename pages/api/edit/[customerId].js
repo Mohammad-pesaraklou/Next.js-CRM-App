@@ -3,7 +3,6 @@ import ConnectDB from "@/utils/ConnectDB";
 
 export default async function handler(req, res) {
   const { customerId } = req.query;
-  console.log(customerId);
   try {
     await ConnectDB();
   } catch (err) {

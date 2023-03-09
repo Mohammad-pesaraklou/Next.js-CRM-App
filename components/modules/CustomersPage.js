@@ -25,7 +25,9 @@ const CustomersPage = ({ customers, getData }) => {
             <Link href={`/edit/${i._id}`}>
               <Button variant="outlined">Edit</Button>
             </Link>
-            <Button variant="outlined">Details</Button>
+            <Link href={`/customers/${i._id}`}>
+              <Button variant="outlined">Details</Button>
+            </Link>
           </div>
         </div>
       ))}

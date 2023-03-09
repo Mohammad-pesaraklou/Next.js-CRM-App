@@ -11,7 +11,6 @@ const Customers = () => {
   const getCustomers = async () => {
     const req = await axios("api/customers");
     setCustomers(req.data.data);
-    console.log(req);
   };
   useEffect(() => {
     getCustomers();
