@@ -1,8 +1,3 @@
-import { Box, Button, Typography } from "@mui/material";
-import axios from "axios";
-import moment from "moment";
-import Link from "next/link";
-import { useRouter } from "next/router";
 // DB
 import Customer from "@/models/Customer";
 import ConnectDB from "@/utils/ConnectDB";

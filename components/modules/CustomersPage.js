@@ -6,7 +6,6 @@ import styles from "../../styles/Customers.module.scss";
 const CustomersPage = ({ customers, getData }) => {
   const deleteHandler = async (id) => {
     const req = await axios.delete(`api/customers/${id}`);
-    console.log(req.data);
     getData();
   };
 
@@ -19,14 +18,17 @@ const CustomersPage = ({ customers, getData }) => {
             <p>{i.email}</p>
           </div>
           <div className={styles.btnContainer}>
-            <Button variant="outlined" onClick={() => deleteHandler(i._id)}>
+            <button
+              className={styles.dltBtn}
+              onClick={() => deleteHandler(i._id)}
+            >
               Delete
-            </Button>
+            </button>
             <Link href={`/edit/${i._id}`}>
-              <Button variant="outlined">Edit</Button>
+              <button className={styles.editBtn}>Edit</button>
             </Link>
             <Link href={`/customers/${i._id}`}>
-              <Button variant="outlined">Details</Button>
+              <button className={styles.dtlBtn}>Details</button>
             </Link>
           </div>
         </div>

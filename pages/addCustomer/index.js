@@ -1,9 +1,11 @@
-import Form from "@/components/modules/Form";
-import { Button } from "@mui/material";
-import axios from "axios";
 import { useRouter } from "next/router";
+import { Button } from "@mui/material";
 import { useState } from "react";
+import axios from "axios";
+// styles
 import styles from "./index.module.scss";
+// component
+import Form from "@/components/modules/Form";
 
 const AddCustomer = () => {
   const router = useRouter();
@@ -34,7 +36,6 @@ const AddCustomer = () => {
       postalCode: "",
       date: "",
     });
-    console.log(req.data);
     if (req.data.status === "successful") return router.push("/customers");
   };
   const cancelHandler = () => {

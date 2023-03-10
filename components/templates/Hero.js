@@ -1,10 +1,10 @@
-import styles from "./Hero.module.scss";
-// bg
-import MyBg from "../../public/images/3270961.jpg";
 import Image from "next/image";
 import { Button } from "@mui/material";
 import Link from "next/link";
-import axios from "axios";
+// style
+import styles from "./Hero.module.scss";
+// bg
+import MyBg from "../../public/images/3270961.jpg";
 const Hero = () => {
   return (
     <div className={styles.container}>

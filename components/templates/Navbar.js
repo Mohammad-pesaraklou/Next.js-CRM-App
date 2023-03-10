@@ -15,7 +15,9 @@ const Navbar = () => {
         }}
       >
         <div className={styles.logoContainer}>
-          <Typography variant="h6">CRM APP</Typography>
+          <Link href={"/"}>
+            <Typography variant="h6">CRM APP</Typography>
+          </Link>
         </div>
         <div className={styles.linkContainer}>
           <Link href="/customers">

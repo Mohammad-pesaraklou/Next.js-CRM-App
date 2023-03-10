@@ -24,14 +24,12 @@ export default async function handler(req, res) {
 
   if (req.method === "POST") {
     const data = req.body.customerInputs;
-    console.log(data);
     if (!data.name || !data.email || !data.lastName) {
       res.status(422).json({ status: "failure", message: "invalid Data" });
     }
 
     try {
       const customerData = await Customer.create(data);
-      console.log(customerData);
       res.status(201).json({ status: "successful", data: customerData });
     } catch (err) {
       res

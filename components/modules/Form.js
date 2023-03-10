@@ -1,4 +1,4 @@
-import styles from "../../pages/addCustomer/index.module.scss";
+// components
 import FromInputs from "./FromInputs";
 import ProductList from "./ProductList";
 

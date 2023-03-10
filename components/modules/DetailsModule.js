@@ -22,7 +22,6 @@ const DetailsModule = ({ customerData }) => {
 
   const deleteHandler = async (id) => {
     const req = await axios.delete(`/api/customers/${id}`);
-    console.log(req.data);
     router.push("/customers");
   };
 

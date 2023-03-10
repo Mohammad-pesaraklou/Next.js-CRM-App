@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { Button } from "@mui/material";
+import moment from "moment/moment";
 import axios from "axios";
 // components
 import Form from "./Form";
 // styles
 import styles from "../../pages/addCustomer/index.module.scss";
-import { useRouter } from "next/router";
-import moment from "moment/moment";
 
 const FormEdit = ({ data, id }) => {
   const date = data.date ? moment(data.date).utc().format("YYYY-MM-DD") : "";

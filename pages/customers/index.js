@@ -1,9 +1,17 @@
-import CustomersPage from "@/components/modules/CustomersPage";
-import { Box, Button, Container, Typography } from "@mui/material";
-import axios from "axios";
-import Link from "next/link";
+import {
+  Box,
+  Button,
+  Container,
+  LinearProgress,
+  Typography,
+} from "@mui/material";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import axios from "axios";
+// styles
 import styles from "../../styles/Customers.module.scss";
+// components
+import CustomersPage from "@/components/modules/CustomersPage";
 
 const Customers = () => {
   const [customers, setCustomers] = useState([]);
@@ -15,6 +23,19 @@ const Customers = () => {
   useEffect(() => {
     getCustomers();
   }, []);
+  if (!customers.length)
+    return (
+      <LinearProgress
+        color="info"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "4px",
+          marginTop: "80px",
+        }}
+      />
+    );
 
   return (
     <Container>
